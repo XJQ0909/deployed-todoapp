@@ -17,7 +17,8 @@ app.use(cors(
     {
         origin:["https://deployed-todoapp-client.vercel.app"],
         methods:["POST", "GET","PUT","DELETE","OPTIONS"],
-      
+        allowedHeaders: ['Content-Type'],
+        optionsSuccessStatus: 200,
         credentials: true
     }
 ))
@@ -167,7 +168,7 @@ app.post('/login', async(req, res)=>{
 
         if (compareResult) {
             const token = jwt.sign({ username }, 'secret', { expiresIn: '1hr' })
-            res.json({ username: user.username, token })
+            res.status(200).json({ username: user.username, token })
         } else {
             res.json({ detail: 'Login failed' })
         }
