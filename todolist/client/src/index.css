@@ -1,0 +1,237 @@
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+
+.app{
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 800px;
+    text-align: center;
+    margin-top:50px;
+
+}
+
+.list-header{
+    width: 100%;
+    display: flex;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+
+}
+
+.list-item{
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0 0 0 1px;
+
+  display: flex;
+  justify-content: space-between;
+
+}
+
+/*info-container*/
+.checkbox-container {
+  display: flex; 
+  align-items: center;
+  padding-left: 10px; 
+}
+
+.checkbox-input {
+  margin-right: 8px; 
+}
+
+input[type="checkbox"]:checked ~ .task-title{
+  text-decoration: line-through;
+  color: rgb(169, 169, 169);
+}
+
+
+
+  /* Button styling */
+  .button-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .button-container button{
+    margin: 0 5px;
+    padding: 5px 10px;
+    border-radius: 12px;
+  }
+
+  .edit {
+    border: 1.5px solid rgb(141,181,145);
+    color:rgb(141,181,145);
+    text-transform: uppercase;
+  }
+
+  .edit:hover{
+    background-color: rgb(182,223,186);
+  }
+  
+  .edit:active{
+    border: 1.5px solid rgb(141,181,145);
+    color:rgb(255,255,255);
+    background-color: rgb(141,181,145);
+  }
+ 
+  .delete {
+    border:1.5px solid rgb(255,175,163);
+    color: rgb(255,175,163);
+    text-transform: uppercase;
+  }
+
+  .delete:hover{
+    background-color: rgb(255,201,193);
+  }
+
+  .delete:active{
+    border:1.5px solid rgb(255,175,163);
+    background-color: rgb(255,175,163);
+    color:rgb(255,255,255);
+  }
+
+  .create {
+    border: 1.5px solid rgb(108,115,148);
+    color:rgb(108,115,148);
+    text-transform: uppercase;
+  }
+
+  .create:hover{
+    background-color: rgb(131,138,172) !important;
+  }
+
+  .create:active{
+    background-color: rgb(108,115,148);
+    color:rgb(255,255,255);
+  }
+
+  .signout {
+    border: 1.5px solid rgb(255,175,163);
+    background-color:rgb(255,175,163) !important;
+    color:rgb(234,234,234);
+  }
+
+  .signout:hover{
+    background-color: rgb(175,94,94) !important;
+    border: 1.5px solid rgb(175,94,94);
+  }
+
+  .signout:active{
+    border: 1.5px solid rgb(175,81,81);
+    background-color: rgb(175,81,81);
+    color:rgb(255,255,255);
+  }
+
+
+
+  /*overlay*/
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background-color: white;
+    padding: 20px;
+    position: relative; 
+    width: 300px; 
+    border-radius: 10px;
+  }
+  
+  .form-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    width: 100%;
+    position: relative; 
+  }
+  
+  .form-title-container button {
+    position: absolute; 
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .form-title-container h3 {
+    font-size: 20px; 
+    margin: 0; /* Remove default margin */
+  }
+
+   /*end of overlay*/
+
+
+
+  .modal .form-title-contianer button:active{
+    color:rgb(255,50,50);
+  }
+
+  .modal form{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .modal label{
+    font-size:13px;
+  }
+
+  input {
+    margin:11px 0;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1.5px solid rgb(230,232,236);
+  }
+
+  .auth-container{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+  }
+
+  .auth-container-box{
+    width: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px, rgba(0,0,0,0.08) 0 0 0 1px;
+  }
+
+  .auth-container-box form{
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    padding: 20px;
+  }
+
+  .auth-options button{
+    width: 50%;
+    border: none;
+    padding: auto;
+    color: rgb(35,38,47)
+  }
+
+ 
