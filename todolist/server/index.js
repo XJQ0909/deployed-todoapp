@@ -37,6 +37,9 @@ client.connect()
   console.error('Error connecting to MongoDB:', err)
 })
 
+app.get('/',(req,res)=>{
+    res.json("HELLO March")
+})
 
 app.get('/todos/:userName',async(req,res) =>{
     const {userName} = req.params
