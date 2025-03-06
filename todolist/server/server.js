@@ -15,7 +15,7 @@ const app = express()
 
 app.use(cors(
     {
-        origin:["http://localhost:3000"],
+        origin:["https://deployed-todoapp-client.vercel.app"],
         methods:["POST", "GET","PUT","DELETE","OPTIONS"],
       
         credentials: true
