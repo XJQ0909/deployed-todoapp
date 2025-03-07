@@ -14,26 +14,6 @@ const Modal =({mode,setShowModal, getData,task}) => {
     date: editMode?task.date:new Date()
   })
 
-  // const postData = async(e)=> {
-  //   e.preventDefault()
-  //   try {
-  //     const response = await
-  //     fetch(`${process.env.REACT_APP_SERVERURL}/todos`,{
-  //       method: "POST",
-  //       headers:{'Content-Type':'application/json'},
-  //       body:JSON.stringify(data)
-  //     })
-      
-  //     if(response.status===200){
-  //       console.log('WORKED')
-  //       setShowModal(false)
-  //       getData()
-  //     }
-  //   } catch (error) {
-  //     console.error(error)
-  //   }
-  // }
-
 
   const postData = async (e) => {
     e.preventDefault();
@@ -60,23 +40,6 @@ const Modal =({mode,setShowModal, getData,task}) => {
   };
 
 
-
-  // const editData = async(e) =>{
-  //   e.preventDefault()
-  //   try {
-  //    const response = await fetch(`${process.env.REACT_APP_SERVERURL}/todos/${task.id}`,{
-  //       method:'PUT',
-  //       headers: {'Content-Type':'application/json'},
-  //       body:JSON.stringify(data)
-  //     })
-  //     if (response.status===200){
-  //       setShowModal(false)
-  //       getData()
-  //     }
-  //   } catch (error) {
-  //     console.error(error)
-  //   }
-  // }
 
   const editData = async (e) => {
     e.preventDefault();
