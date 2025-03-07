@@ -15,10 +15,6 @@ const App =() => {
   const getData = async () =>{
   
     try {
-      // const response = await fetch(`${process.env.REACT_APP_SERVERURL}/todos/${userName}`)
-      // const json = await  response.json()
-      // setTasks(json)
-
       axios.defaults.withCredentials = true;
       const response = await axios.get(`${process.env.REACT_APP_SERVERURL}/todos/${userName}`);
       setTasks(response.data);
