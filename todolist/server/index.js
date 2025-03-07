@@ -29,7 +29,7 @@ client.connect()
     const usersCollection = db.collection('users');  // users collection
     const todosCollection = db.collection('todos');
 
-    // All your routes go inside this block to ensure they're set up after MongoDB connection
+    // routes go inside this block to ensure they're set up after MongoDB connection
     app.get('/',(req,res)=>{
     res.json("HELLO March")
 })
@@ -127,10 +127,6 @@ client.connect()
 
     // Login
     app.post('/login', async (req, res) => {
-        //res.header("Access-Control-Allow-Origin", "*");
-        //res.header("Access-Control-Allow-Methods", "POST,GET,PUT,DELETE,OPTIONS");
-        //res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
-
         const { username, password } = req.body;
         try {
             const user = await usersCollection.findOne({ username });
