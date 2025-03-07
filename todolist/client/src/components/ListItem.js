@@ -6,19 +6,6 @@ import axios from 'axios'
 const ListItem =({task, getData}) => {
   const [showModal, setShowModal]=useState(false)
 
-  // const deleteItem = async()=>{
-  //   try {
-  //     const response = await fetch(`${process.env.REACT_APP_SERVERURL}/todos/${task.id}`,{
-  //       method:'DELETE'
-  //     })
-  //     if(response.status===200){
-  //       getData()
-  //     }
-  //   } catch (error) {
-  //     console.error(error)
-  //   }
-  // }
-
   axios.defaults.withCredentials = true;
   const deleteItem = async () => {
     try {
@@ -33,27 +20,6 @@ const ListItem =({task, getData}) => {
 
 
   // completed or not
-  // const updateTaskStatus = async (isChecked) => {
-  //   try {
-  //     const response = await fetch(`${process.env.REACT_APP_SERVERURL}/todos/${task.id}/status`, {
-  //       method: 'PUT',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({
-  //         completed: isChecked,
-  //       }),
-  //     });
-
-  //     if (response.status === 200) {
-  //       getData(); // Refresh data after updating
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
-
   axios.defaults.withCredentials = true;
   const updateTaskStatus = async (isChecked) => {
     try {
