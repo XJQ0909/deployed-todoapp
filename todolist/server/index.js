@@ -15,7 +15,7 @@ const app = express()
 
 app.use(cors(
     {
-        origin:["https://deployed-todoapp-client.vercel.app"],
+        origin:["https://deployed-todoapp-client.vercel.app","https://deployed-todoapp-client-git-main-shirleys-projects-90a45eb6.vercel.app"],
         methods:["POST", "GET","PUT","DELETE","OPTIONS"],
         allowedHeaders: ['Content-Type'],
         optionsSuccessStatus: 200,
