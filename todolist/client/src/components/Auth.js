@@ -30,7 +30,7 @@ const Auth =() => {
     //   body: JSON.stringify({username,password})
     // })
 
-   // axios.defaults.withCredentials = true;
+    axios.defaults.withCredentials = true;
     const response = await axios.post(
       `${process.env.REACT_APP_SERVERURL}/${endpoint}`,
       { username, password },
