@@ -127,9 +127,9 @@ client.connect()
 
     // Login
     app.post('/login', async (req, res) => {
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Methods", "POST,GET,PUT,DELETE,OPTIONS");
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
+        //res.header("Access-Control-Allow-Origin", "*");
+        //res.header("Access-Control-Allow-Methods", "POST,GET,PUT,DELETE,OPTIONS");
+        //res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
 
         const { username, password } = req.body;
         try {
