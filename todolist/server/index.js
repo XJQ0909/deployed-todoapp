@@ -22,6 +22,15 @@ app.use(cors(
         credentials: true
     }
 ))
+
+const corsOptions = {
+  origin:["https://deployed-todoapp-client.vercel.app","https://deployed-todoapp-client-git-main-shirleys-projects-90a45eb6.vercel.app"],
+  methods: ["POST", "GET", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ['Content-Type'],
+  optionsSuccessStatus: 200,
+  credentials: true
+};
+
 app.use(express.json())
 
 const Db =  `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.2heqr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
@@ -154,7 +163,7 @@ app.post('/signup', async(req, res)=>{
 })
 
 //login
-app.post('/login', async(req, res)=>{
+app.post('/login', cors(corsOptions), async(req, res)=>{
     const{username,password}=req.body
     try {
 
