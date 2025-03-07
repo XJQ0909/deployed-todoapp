@@ -10,7 +10,7 @@ const jwt = require('jsonwebtoken');
 const app = express();
 
 app.use(cors({
-    origin:["https://deployed-todoapp-client.vercel.app","https://deployed-todoapp-client-git-main-shirleys-projects-90a45eb6.vercel.app"],
+    origin: ["https://deployed-todoapp-client.vercel.app", "https://deployed-todoapp-client-git-main-shirleys-projects-90a45eb6.vercel.app"],
     methods: ["POST", "GET", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ['Content-Type'],
     optionsSuccessStatus: 200,
@@ -30,9 +30,9 @@ client.connect()
     const todosCollection = db.collection('todos');
 
     // routes go inside this block to ensure they're set up after MongoDB connection
-    app.get('/',(req,res)=>{
-    res.json("HELLO March")
-})
+    app.get('/', (req, res) => {
+        res.json("HELLO March")
+    });
 
     // Get todos for a specific user
     app.get('/todos/:userName', async (req, res) => {
@@ -148,6 +148,14 @@ client.connect()
     });
 
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+    // Graceful shutdown: disconnect from MongoDB when app is terminated
+    process.on('SIGINT', async () => {
+        console.log('SIGINT received. Closing MongoDB connection...');
+        await client.close();
+        console.log('MongoDB connection closed');
+        process.exit(0);
+    });
 
   })
   .catch(err => {
